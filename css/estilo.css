@@ -1,0 +1,319 @@
+@font-face{
+    font-family:'OpenDescargada';
+    src:url("../Fonts/OpenSans-Regular.ttf")format('truetype');
+}
+
+@font-face{
+    font-family:'open2';
+    src:url("../Fonts/OpenSans-VariableFont.ttf") format('truetype');
+}
+
+:root{
+    --fuente_titulos:'open2';
+    --fuente_cuerpo:'OpenDescargada';
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: rgb(233, 228, 211);
+    color: var(--color_obscuro);
+    line-height: 1.6;
+    font-family: var(--fuente_titulos);
+}
+
+ul{
+    list-style:none;
+}
+
+a{
+    text-decoration: none;
+    font-family: var(--fuente_titulos);
+    color: blue;
+}
+
+a:hover{
+    color:rgb(91, 111, 111);
+}
+
+header {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.05);
+    flex-direction: row; /* Apila el título arriba y el menú abajo */
+    justify-content: space-between;
+    align-items: center;    /* Centra el título y el menú en el medio */
+    gap: 80px;
+    text-align: center;
+    padding: 15px 50px;
+    border-radius: 15px;
+    width: 95%;
+    max-width: 1400px; /* Controla qué tan ancho se verá en pantallas grandes */
+    margin: 10px auto; /* 15px de espacio arriba/abajo y lo centra horizontalmente */
+}
+
+header h1{
+    color: rgb(39, 42, 38);
+}
+
+nav{
+    display: flex;
+}
+
+nav ul{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#bio {
+    text-align: center;    /* Centra el título h2, la imagen y el texto */
+    padding: 50px 20px;    /* 50px de espacio interno arriba/abajo, 20px a los lados */
+    max-width: 800px;      /* Evita que los párrafos se estiren demasiado a los lados */
+    margin: 0 auto;        /* Centra la sección entera en la pantalla */
+}
+
+#bio .foto {
+    width: 400px;          /* Controla el tamaño de la imagen */
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;    /* La hace redonda */
+    margin: 20px auto;     /* Le da espacio arriba y abajo respecto al título y párrafo */
+}
+
+#bio p {
+    margin-bottom: 20px;   /* Separa el párrafo */
+}
+
+#bio, #hobbies {
+    background-color: #ffffff;             /* Fondo blanco del recuadro */
+    border-radius: 15px;                  /* Mismo redondeo que tu header */
+    padding: 35px 25px;                   /* Relleno interno */
+    max-width: 800px;                      /* Ancho máximo de la tarjeta */
+    margin: 30px auto;                    /* Espaciado entre secciones y centrado */
+    box-shadow: 0 5px 15px rgba(59, 53, 53, 0.5); /* Sombra ligera para dar profundidad */
+    text-align: center;
+}
+
+#hobbies ul {
+    display: flex;
+    flex-wrap: wrap;            /* Si no caben en una fila, bajan a la siguiente */
+    justify-content: center;
+    gap: 12px;                  /* Espacio entre cada tarjeta de hobby */
+    margin-top: 20px;
+}
+
+#hobbies li {
+    background-color: rgb(242, 239, 229); /* Color de fondo ligero para las cápsulas */
+    padding: 10px 20px;
+    border-radius: 20px;        /* Bordes totalmente redondeados tipo pastilla */
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;  /* Transición suave para la animación */
+    cursor: default;            /* O pointer si quieres que parezca interactivo */
+}
+
+#hobbies li:hover {
+    background-color: rgb(91, 111, 111); /* Color acento */
+    color: #ffffff;                     /* Texto blanco al resaltar */
+    transform: translateY(-4px);        /* Se eleva 4px */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+#btn_destacado{
+    padding: 5px 12px;
+    font-size: 0.88rem;
+    border-radius: 6px;
+    font-weight: 500;
+    background-color: rgb(75, 75, 154);
+    color: white;
+    display: inline-block;     /* Hace que el navegador respete bien el padding */
+    transition: background-color 0.2s ease;
+}
+
+/* Estilo para la sección de gustos */
+
+#gustos {
+    background-color: white;
+    border-radius: 15px;
+    padding: 35px 30px;
+    max-width: 800px;
+    margin: 30px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+#gustos h2 {
+    text-align: center;
+    color: rgb(39, 42, 38);
+    margin-bottom: 25px;
+}
+
+/* Subtítulos decorados */
+#gustos h3 {
+    color: rgb(75, 75, 154);
+    margin-top: 30px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid rgb(233, 228, 211);
+    padding-bottom: 5px;
+}
+
+/* 2. Estilo para tu lista de favoritos (<dl>) */
+#gustos dl {
+    background-color: rgb(248, 246, 240);
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr; /* Coloca el título y la respuesta en filas alineadas */
+    gap: 8px 15px;
+}
+
+#gustos dt {
+    font-weight: bold;
+    color: rgb(39, 42, 38);
+}
+
+#gustos dd {
+    color: #555;
+}
+
+/* 3. Estilo para tu top 3 (<ol>) */
+#gustos ol {
+    padding-left: 25px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* 4. Estilo para TU TABLA existente */
+#gustos table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+#gustos caption {
+    caption-side: top;
+    text-align: left;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+#gustos thead tr {
+    background-color: rgb(75, 75, 154);
+    color: white;
+    text-align: left;
+}
+
+#gustos th, 
+#gustos td {
+    padding: 12px 15px;
+}
+
+#gustos tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+/* Filas intercaladas */
+#gustos tbody tr:nth-of-type(even) {
+    background-color: rgb(248, 246, 240);
+}
+
+/* Efecto hover en la tabla */
+#gustos tbody tr:hover {
+    background-color: rgb(233, 228, 211);
+}
+
+/* 5. Estilo para el video de YouTube (iframe) */
+#gustos iframe {
+    width: 100%;
+    height: 315px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/*Estilo para la seccion contacto*/
+
+#contacto {
+    background-color: white;
+    border-radius: 15px;
+    padding: 35px 30px;
+    max-width: 800px;
+    margin: 30px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Título principal */
+#contacto h2 {
+    text-align: center;
+    color: rgb(39, 42, 38);
+    margin-bottom: 25px;
+}
+
+/* Subtítulo con línea decorativa */
+#contacto h3 {
+    color: rgb(75, 75, 154);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgb(233, 228, 211);
+    padding-bottom: 5px;
+}
+
+/* 2. Tarjeta de presentación para la etiqueta <address> */
+#contacto address {
+    font-style: normal;
+    line-height: 2;
+    font-size: 1rem;
+    background-color: rgb(248, 246, 240);
+    padding: 20px 25px;
+    border-radius: 10px;
+    border-left: 5px solid rgb(75, 75, 154);
+    margin-bottom: 20px;
+}
+
+#contacto address strong {
+    font-size: 1.2rem;
+    color: rgb(39, 42, 38);
+}
+
+#contacto address a {
+    color: rgb(75, 75, 154);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+#contacto address a:hover {
+    color: rgb(91, 111, 111);
+    text-decoration: underline;
+}
+
+/* 3. Estilo para el mapa de Google Maps */
+#contacto iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/*footer*/
+footer{
+    background-color: rgb(50, 49, 49);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+
+}
